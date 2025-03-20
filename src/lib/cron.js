@@ -1,9 +1,12 @@
 import cron from 'cron'
 import https from 'https'
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 const job = new cron.CronJob('*/14 * * * * *', function () {
     https
-        .get('https://api.example.com/cron', (res) => {
+        .get(process.env.API_URL, (res) => {
             if (res.stausCode === 200) {
                 console.log('Cron job completed successfully')
             } else {

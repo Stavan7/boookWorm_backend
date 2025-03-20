@@ -4,12 +4,14 @@ import express from 'express';
 import { connectDB } from './lib/db.js';
 import authRoutes from './routes/auth.routes.js'
 import bookRoutes from './routes/book.routes.js'
+import job from './lib/cron.js';
 
 dotenv.config()
 const app = express()
 
 const PORT = process.env.PORT || 3000
 
+job.start();
 app.use(cors())
 app.use(express.json({ limit: '10mb' }))   //middlewawre to handle body
 
