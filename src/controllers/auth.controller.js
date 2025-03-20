@@ -27,7 +27,7 @@ export const register = async (req, res) => {
         if (usernameExists) return res.status(400).json({ message: "Username already exists" })
 
         //get random avatar as per username
-        const profileImage = `https://api.dicebear.com/9.x/adventurer/svg?seed=${username}`
+        const profileImage = `https://api.dicebear.com/9.x/adventurer/png?seed=${username}`
 
         const user = new User({
             email,
