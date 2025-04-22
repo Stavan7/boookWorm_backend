@@ -20,7 +20,10 @@ const userSchema = new mongoose.Schema({
     profileImage: {
         type: String,
         default: ""
-    }
+    },
+    bio: String,
+    resetCode: String,
+    resetCodeExpiry: String
 }, { timestamps: true })
 
 //hash password before saving user to db

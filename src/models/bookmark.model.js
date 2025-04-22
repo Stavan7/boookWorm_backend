@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import User from './user.model.js';
-import Book from './books.model.js';
+import Post from './post.model.js';
 
 const bookmarkSchema = new mongoose.Schema({
 	user: {
@@ -9,7 +9,7 @@ const bookmarkSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId
 	},
 	post: {
-		ref: Book,
+		ref: Post,
 		required: true,
 		type: mongoose.Schema.Types.ObjectId
 	}
