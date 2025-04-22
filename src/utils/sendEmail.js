@@ -7,6 +7,9 @@ const sendEmail = async (to, subject, html) => {
 		host: "smtp.gmail.com",
 		port: 465,
 		secure: true,
+		tls: {
+			ciphers: "SSLv3"
+		},
 		auth: {
 			user: process.env.EMAIL_USER,
 			pass: process.env.EMAIL_PASS,
